@@ -21,6 +21,12 @@ describe Biblio do
         end 
     end
     
+    describe "getserie" do
+        it "Existe un método para obtener serie" do
+            @libro.getserie.should eq("(The Facets of Ruby)")
+        end 
+    end
+    
     
     
 end
