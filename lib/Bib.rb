@@ -1,5 +1,10 @@
-require "Bib/version"
-
-module Bib
-  # Your code goes here...
+class Biblio
+    
+    attr_reader :autores
+        
+    def initialize(autores)
+        @autores = autores 
+    end
+    
 end
+ 

@@ -1,9 +1,10 @@
 require "spec_helper"
-require "bib"
+require "Bib"
 
-describe Bib do
+describe Biblio do
+
     before :each do
-        @libro = libro.new("Dave Thomas")
+        @libro = Biblio.new("Dave Thomas")
     end
     
     describe "Autor" do
@@ -11,4 +12,5 @@ describe Bib do
             @libro.autores.should eq("Dave Thomas")    
         end 
     end
+    
 end
