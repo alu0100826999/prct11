@@ -20,5 +20,9 @@ class Biblio
         return @titulo
     end
     
+    def getserie
+        return @serie
+    end
+    
 end
  
