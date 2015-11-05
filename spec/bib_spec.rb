@@ -27,6 +27,11 @@ describe Biblio do
         end 
     end
     
+     describe "geteditorial" do
+        it "Existe un método para obtener una editorial" do
+            @libro.geteditorial.should eq("Pragmatic Bookshelf")
+        end 
+    end
     
     
 end
