@@ -1,11 +1,12 @@
 class Biblio
     
-    attr_reader :autores, :titulo, :serie
+    attr_reader :autores, :titulo, :serie, :editorial
         
-    def initialize(autores, titulo, serie = nil)
+    def initialize(autores, titulo, serie = nil, editorial)
         @autores = autores
         @titulo = titulo
         @serie = serie
+        @editorial = editorial
     end
     
 end

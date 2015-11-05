@@ -4,7 +4,7 @@ require "Bib"
 describe Biblio do
 
     before :each do
-        @libro = Biblio.new(["Dave Thomas", "Andy Hunt", "Chad Fowler"],"Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide", "(The Facets of Ruby)")
+        @libro = Biblio.new(["Dave Thomas", "Andy Hunt", "Chad Fowler"],"Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide", "(The Facets of Ruby)", "Pragmatic Bookshelf")
     end
     
     describe "Autor" do
@@ -15,7 +15,7 @@ describe Biblio do
     
     describe "Titulo" do
         it "Debe existir un título" do
-            @libro.titulo.should eq("Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide", "Pragmatic Bookshelf;")    
+            @libro.titulo.should eq("Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide")    
         end 
     end
     
@@ -27,7 +27,7 @@ describe Biblio do
     
     describe "Editorial" do
         it "Debe existir una editorial" do
-            @libro.editorial.should eq("Pragmatic Bookshelf;")    
+            @libro.editorial.should eq("Pragmatic Bookshelf")    
         end 
     end
     
