@@ -24,5 +24,9 @@ class Biblio
         return @serie
     end
     
+    def geteditorial
+        return @editorial
+    end
+    
 end
  
