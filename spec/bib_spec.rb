@@ -27,11 +27,29 @@ describe Biblio do
         end 
     end
     
-     describe "geteditorial" do
+    describe "geteditorial" do
         it "Existe un método para obtener una editorial" do
             @libro.geteditorial.should eq("Pragmatic Bookshelf")
         end 
     end
     
+    
+    describe "getEdicion" do
+        it "Existe un método para obtener un Número de edición" do
+            @libro.getnumedicion.should eq("4 edition")    
+        end 
+    end
+    
+    describe "getPublicación" do
+        it "Existe un método para obtener una fecha de publicación" do
+            @libro.getfecha.should eq("(July 7, 2013)")    
+        end 
+    end
+    
+    describe "getISBN" do
+        it "Existe un método para obtener uno más números ISBN" do
+            @libro.getisbn.should eq(["ISBN-13: 978-1937785499","ISBN-10: 1937785491"])    
+        end 
+    end
     
 end
