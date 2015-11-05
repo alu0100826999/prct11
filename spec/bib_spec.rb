@@ -52,4 +52,9 @@ describe Biblio do
         end 
     end
     
+    describe "Formateada" do
+        it 'Existe un método para obtener la referencia formateada' do
+            @libro.formateada.should eq("Pepe, Juan, Manuel | Los tres cerditos | Primera Serie | Fabulas | 1a edicion | 1 Enero | ISBN-23: 4534533453, ISBN-20: 5435345345")  
+        end
+    end
 end
