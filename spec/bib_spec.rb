@@ -15,15 +15,9 @@ describe Biblio do
         end 
     end
     
-<<<<<<< HEAD
-    describe "getautores" do
-        it "Existe un método para obtener el listado de autores" do
-            @libro.getautores.should eq() 
-=======
-        describe "gettitulo" do
+    describe "gettitulo" do
         it "Existe un método para obtener titulo" do
             @libro.gettitulo.should eq("Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide")
->>>>>>> 78d3d1a8eefbefa0821dc2323374ce63d8106b49
         end 
     end
     

@@ -16,5 +16,9 @@ class Biblio
         return @autores
     end
     
+    def gettitulo
+        return @titulo
+    end
+    
 end
  
