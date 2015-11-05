@@ -51,7 +51,7 @@ describe Biblio do
     
     describe "getautores" do
         it "Existe un método para obtener el listado de autores" do
-            @libro.getautores.should eq()    
+            @libro.getautores.should eq()
         end 
     end
     

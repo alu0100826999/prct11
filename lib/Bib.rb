@@ -12,5 +12,9 @@ class Biblio
         @isbn = isbn
     end
     
+    def getautores
+        return @autores
+    end
+    
 end
  
