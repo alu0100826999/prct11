@@ -7,8 +7,6 @@ describe Biblio do
         @libro = Biblio.new(["Dave Thomas", "Andy Hunt", "Chad Fowler"],"Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide", "(The Facets of Ruby)", "Pragmatic Bookshelf", "4 edition", "(July 7, 2013)", ["ISBN-13: 978-1937785499","ISBN-10: 1937785491"])
     end
     
-
-    
     describe "getautores" do
         it "Existe un método para obtener el listado de autores" do
             @libro.getautores.should eq(["Dave Thomas", "Andy Hunt", "Chad Fowler"])
@@ -54,7 +52,7 @@ describe Biblio do
     
     describe "Formateada" do
         it 'Existe un método para obtener la referencia formateada' do
-            @libro.formateada.should eq("Pepe, Juan, Manuel | Los tres cerditos | Primera Serie | Fabulas | 1a edicion | 1 Enero | ISBN-23: 4534533453, ISBN-20: 5435345345")  
+            @libro.formateada.should eq("Dave Thomas, Andy Hunt, Chad Fowler \n Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide \n (The Facets of Ruby) \n Pragmatic Bookshelf \n 4 edition \n (July 7, 2013) \n [\"ISBN-13: 978-1937785499\", \"ISBN-10: 1937785491\"]")  
         end
     end
 end

@@ -40,5 +40,9 @@ class Biblio
         return @isbn
     end
     
+    def formateada()
+       "#{@autores[0]}, #{@autores[1]}, #{@autores[2]} \n #{@titulo} \n #{@serie} \n #{@editorial} \n #{@numedicion} \n #{@fecha} \n #{@isbn}"
+    end
+    
 end
  
