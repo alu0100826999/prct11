@@ -42,4 +42,10 @@ describe Biblio do
             @libro.fecha.should eq("(July 7, 2013)")    
         end 
     end
+    
+    describe "ISBN" do
+        it "Debe existir uno o más números ISBN" do
+            @libro.isbn.should eq(["ISBN-13: 978-1937785499","ISBN-10: 1937785491"])    
+        end 
+    end
 end
