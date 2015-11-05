@@ -48,4 +48,13 @@ describe Biblio do
             @libro.isbn.should eq(["ISBN-13: 978-1937785499","ISBN-10: 1937785491"])    
         end 
     end
+    
+    describe "getautores" do
+        it "Existe un método para obtener el listado de autores" do
+            @libro.getautores.should eq()    
+        end 
+    end
+    
+    
+    
 end
