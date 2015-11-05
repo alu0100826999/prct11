@@ -28,5 +28,17 @@ class Biblio
         return @editorial
     end
     
+    def getnumedicion
+        return @numedicion
+    end
+    
+    def getfecha
+        return @fecha
+    end
+    
+    def getisbn
+        return @isbn
+    end
+    
 end
  
