@@ -60,6 +60,11 @@ describe Biblio do
         @lista.extract()
     end
     
+    it "Debe existir una Lista con su cabeza" do
+        @lista.insert(@nodo1)
+        expect(@lista.inicio).to eq(@nodo1)
+    end
+    
 end
 
 
