@@ -26,22 +26,18 @@ describe Biblio do
     end
     
     it "Se extrae el primer elemento de la lista" do
-        @lista.pop(@nodo5)
-        @lista.pop(@nodo4)
-        @lista.pop(@nodo3)
-        @lista.pop(@nodo2)
-        @lista.pop(@nodo1)
-        @lista.extract
-        expect(@lista.inicio).to eq(@nodo2)
+        expect(@lista.extract()).to eq(nodo1)
     end
     
     it "Se puede insertar un elemento" do
-        @lista.pop(@nodo3)
+        @lista.insert(@nodo3)
         expect(@lista.inicio).to eq(@nodo3)
     end
     
-    it "Se pueden insertar varios elementos" do
-        
+    describe "Se pueden insertar varios elementos" do
+        it "Existe un elemento para insertar varios elementos" do
+            
+        end
     end
     
 end
