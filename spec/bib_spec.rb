@@ -26,7 +26,7 @@ describe Biblio do
     end
     
     it "Se extrae el primer elemento de la lista" do
-        @lista.insert(@nodo5)
+        @lista.insert(@nodo5) #metemos todos los elementos en la lista y sacamos el nodo[1] no el 0
         @lista.insert(@nodo4)
         @lista.insert(@nodo3)
         @lista.insert(@nodo2)
@@ -40,10 +40,15 @@ describe Biblio do
         expect(@lista.inicio).to eq(@nodo3)
     end
     
-    describe "Se pueden insertar varios elementos" do
-        it "Existe un elemento para insertar varios elementos" do
-            
-        end
+
+    it "Existe un elemento para insertar varios elementos" do
+        @lista.insert(@nodo5)
+        @lista.insert(@nodo4)
+        @lista.insert(@nodo3)
+        @lista.insert(@nodo2)
+        @lista.insert(@nodo1)
+        
+        
     end
     
 end
