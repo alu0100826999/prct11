@@ -10,21 +10,29 @@ describe Biblio do
         @libro4 = Biblio.new(["David Chelimsky, Dave Astels, Bryan Helmkamp, Dan North, Zach Dennis, Aslak Hellesoy"], "The RSpec Book: Behaviour Driven Development with RSpec, Cucumber, and Friends", "The Facets of Ruby", "Pragmatic Bookshelf", "1 edition", "December 25, 2010", ["ISBN-10: 1934356379", "ISBN-13: 978-1934356371"])
         @libro5 = Biblio.new("Richard E. Silverman", "Git Pocket Guide", "", "O’Reilly Media", "1 edition", "August 2, 2013", ["ISBN-10: 1449325866", "ISBN-13: 978-1449325862"])
         
-        @nodo1 = Nodo.new(@libro1)
+        @nodo1 = Nodo.new(@libro1, nil)
         @nodo2 = Nodo.new(@libro2, nil)
         @nodo3 = Nodo.new(@libro3, nil)
         @nodo4 = Nodo.new(@libro4, nil)
         @nodo5 = Nodo.new(@libro5, nil)
         
-        @lista1 = Lista.new([@node1,@node2,@node3])
-        @lista2 = Lista.new([@node4])
-        @lista3 = Lista.new([@node6])
+        @lista = Lista.new(0)
         
     end
     
     it "Debe existir un Nodo de la lista con sus datos y su siguiente" do
         expect(@nodo1.value).to eq(@libro1)
         expect(@nodo1.next).to eq(nil)
+    end
+    
+    it "Se extrae el primer elemento de la lista" do
+        @lista.push(@nodo5)
+        @lista.push(@nodo4)
+        @lista.push(@nodo3)
+        @lista.push(@nodo2)
+        @lista.push(@nodo1)
+        @lista.extract
+        expect(@lista.inicio).to eq(@nodo2)
     end
     
     
