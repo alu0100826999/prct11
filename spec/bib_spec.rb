@@ -48,8 +48,16 @@ describe Biblio do
         @lista.insert(@nodo2)
         @lista.insert(@nodo1)
         
+        expect(@lista.inicio).to eq(@nodo1)
+        @lista.extract()
+        expect(@lista.inicio).to eq(@nodo2)
+        @lista.extract()
+        expect(@lista.inicio).to eq(@nodo3)
+        @lista.extract()
+        expect(@lista.inicio).to eq(@nodo4)
+        @lista.extract()
         expect(@lista.inicio).to eq(@nodo5)
-        @lista.ext
+        @lista.extract()
     end
     
 end
