@@ -9,7 +9,7 @@ class Lista
        
     end
     
-    def push(nodo)
+    def pop(nodo)
         
         if (@inicio != nil)
            nodo.next = @inicio
