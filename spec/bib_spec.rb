@@ -20,49 +20,57 @@ describe Biblio do
         
     end
     
-    it "Debe existir un Nodo de la lista con sus datos y su siguiente" do
-        expect(@nodo1.value).to eq(@libro1)
-        expect(@nodo1.next).to eq(nil)
-    end
+    context "Node" do
     
-    it "Se extrae el primer elemento de la lista" do
-        @lista.insert(@nodo5) #metemos todos los elementos en la lista y sacamos el nodo[1] no el 0
-        @lista.insert(@nodo4)
-        @lista.insert(@nodo3)
-        @lista.insert(@nodo2)
-        @lista.insert(@nodo1)
-        @lista.extract()
-        expect(@lista.inicio).to eq(@nodo2)
-    end
-    
-    it "Se puede insertar un elemento" do
-        @lista.insert(@nodo3)
-        expect(@lista.inicio).to eq(@nodo3)
-    end
-    
-
-    it "Existe un elemento para insertar varios elementos" do
-        @lista.insert(@nodo5)
-        @lista.insert(@nodo4)
-        @lista.insert(@nodo3)
-        @lista.insert(@nodo2)
-        @lista.insert(@nodo1)
+        it "Debe existir un Nodo de la lista con sus datos y su siguiente" do
+            expect(@nodo1.value).to eq(@libro1)
+            expect(@nodo1.next).to eq(nil)
+        end
         
-        expect(@lista.inicio).to eq(@nodo1)
-        @lista.extract()
-        expect(@lista.inicio).to eq(@nodo2)
-        @lista.extract()
-        expect(@lista.inicio).to eq(@nodo3)
-        @lista.extract()
-        expect(@lista.inicio).to eq(@nodo4)
-        @lista.extract()
-        expect(@lista.inicio).to eq(@nodo5)
-        @lista.extract()
     end
     
-    it "Debe existir una Lista con su cabeza" do
-        @lista.insert(@nodo1)
-        expect(@lista.inicio).to eq(@nodo1)
+    context "Lista" do
+    
+        it "Se extrae el primer elemento de la lista" do
+            @lista.insert(@nodo5) #metemos todos los elementos en la lista y sacamos el nodo[1] no el 0
+            @lista.insert(@nodo4)
+            @lista.insert(@nodo3)
+            @lista.insert(@nodo2)
+            @lista.insert(@nodo1)
+            @lista.extract()
+            expect(@lista.inicio).to eq(@nodo2)
+        end
+        
+        it "Se puede insertar un elemento" do
+            @lista.insert(@nodo3)
+            expect(@lista.inicio).to eq(@nodo3)
+        end
+        
+    
+        it "Existe un elemento para insertar varios elementos" do
+            @lista.insert(@nodo5)
+            @lista.insert(@nodo4)
+            @lista.insert(@nodo3)
+            @lista.insert(@nodo2)
+            @lista.insert(@nodo1)
+            
+            expect(@lista.inicio).to eq(@nodo1)
+            @lista.extract()
+            expect(@lista.inicio).to eq(@nodo2)
+            @lista.extract()
+            expect(@lista.inicio).to eq(@nodo3)
+            @lista.extract()
+            expect(@lista.inicio).to eq(@nodo4)
+            @lista.extract()
+            expect(@lista.inicio).to eq(@nodo5)
+            @lista.extract()
+        end
+        
+        it "Debe existir una Lista con su cabeza" do
+            @lista.insert(@nodo1)
+            expect(@lista.inicio).to eq(@nodo1)
+        end
+        
     end
     
 end
