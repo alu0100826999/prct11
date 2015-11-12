@@ -26,7 +26,13 @@ describe Biblio do
     end
     
     it "Se extrae el primer elemento de la lista" do
-        expect(@lista.extract()).to eq(nodo1)
+        @lista.insert(@nodo5)
+        @lista.insert(@nodo4)
+        @lista.insert(@nodo3)
+        @lista.insert(@nodo2)
+        @lista.insert(@nodo1)
+        @lista.extract()
+        expect(@lista.inicio).to eq(@nodo2)
     end
     
     it "Se puede insertar un elemento" do

@@ -9,10 +9,7 @@ class Lista
     
     def insert(nodo)    #push
         if (@inicio != nil)
-            aux = @inicio.next
-            @inicio = nodo
-            @inicio.next = aux
-        else
+            nodo.next = @inicio
             @inicio = nodo
         end
     end
@@ -21,9 +18,7 @@ class Lista
         if (@inicio != nil)
             aux = @inicio
             @inicio = @inicio.next
-            return aux
-        else
-            return nil
+            return aux.value
         end
     end
     
