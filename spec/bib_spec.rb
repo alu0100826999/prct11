@@ -48,7 +48,8 @@ describe Biblio do
         @lista.insert(@nodo2)
         @lista.insert(@nodo1)
         
-        
+        expect(@lista.inicio).to eq(@nodo5)
+        @lista.ext
     end
     
 end
