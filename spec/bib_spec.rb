@@ -10,13 +10,16 @@ describe Biblio do
         @libro4 = Biblio.new(["David Chelimsky, Dave Astels, Bryan Helmkamp, Dan North, Zach Dennis, Aslak Hellesoy"], "The RSpec Book: Behaviour Driven Development with RSpec, Cucumber, and Friends", "The Facets of Ruby", "Pragmatic Bookshelf", "1 edition", "December 25, 2010", ["ISBN-10: 1934356379", "ISBN-13: 978-1934356371"])
         @libro5 = Biblio.new("Richard E. Silverman", "Git Pocket Guide", "", "O’Reilly Media", "1 edition", "August 2, 2013", ["ISBN-10: 1449325866", "ISBN-13: 978-1449325862"])
         
+        @nodonil=Nodo.new(nil)
+	    @nodo0 = Nodo.new("dato",nil)
+	    @nodo01= Nodo.new("dato",@nodo0)
+	    @lista= Lista.new()
+        
         @nodo1 = Nodo.new(@libro1, nil)
         @nodo2 = Nodo.new(@libro2, nil)
         @nodo3 = Nodo.new(@libro3, nil)
         @nodo4 = Nodo.new(@libro4, nil)
         @nodo5 = Nodo.new(@libro5, nil)
-        
-        @lista = Lista.new(0)
         
     end
     

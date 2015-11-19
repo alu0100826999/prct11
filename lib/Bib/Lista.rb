@@ -3,7 +3,7 @@ Nodo = Struct.new(:value, :next)
 class Lista
     attr_reader :inicio
     
-    def initialize(nodo)
+    def initialize()
        @inicio = Nodo.new(nil)
     end
     
@@ -16,6 +16,7 @@ class Lista
     
     def extract()   #pop
         if (@inicio != nil)
+            @aux=Nodo.new(nil)
             aux = @inicio
             @inicio = @inicio.next
             return aux.value
