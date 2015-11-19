@@ -91,7 +91,7 @@ describe Biblio do
         
         describe "Existe una lista enlazada doble con su head y su tail (doblemente enlazada)" do
             it "Se puede insertar por el inicio y extraer por el final" do
-                @listadoble.insert_head(@libro5) #insertamos libro por el principio
+                @listadoble.insert_head(@libro5)
                 expect(@listadoble.head.value).to eq(@libro5)
     			expect(@listadoble.tail.value).to eq(@libro5)
     		end
