@@ -24,6 +24,7 @@ describe Biblio do
         
         @nodo6 = Nodo2.new(@libro1, nil, nil)
 
+        @lista2 = Lista2.new()
         
     end
     
@@ -83,12 +84,16 @@ describe Biblio do
     
     context "Lista2" do
         
-        describe "Existe un nodo de la lista que es doble" do
-            it "Almacenamos los nodos" do
-                expect(@nodo6.next).to eq(nil)
-                expect(@nodo6.prev).to eq(nil)
-            end
+        it "Existe un nodo de la lista que es doble" do
+            expect(@nodo6.next).to eq(nil)
+            expect(@nodo6.prev).to eq(nil)
         end
+        
+        it "Existe una lista enlazada doble con su head y su tail (doblemente enlazada)" do
+            @lista2.insert_nodo(@libro5)
+            expect(@lista2.head.value).to eq(@libro5)
+			expect(@lista2.tail.value).to eq(@libro5)
+        end  
     
     end
     
