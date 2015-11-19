@@ -11,8 +11,6 @@ describe Biblio do
         @libro5 = Biblio.new("Richard E. Silverman", "Git Pocket Guide", "", "O’Reilly Media", "1 edition", "August 2, 2013", ["ISBN-10: 1449325866", "ISBN-13: 978-1449325862"])
         
         @nodonil=Nodo.new(nil)
-	    @nodo0 = Nodo.new("dato",nil)
-	    @nodo01= Nodo.new("dato",@nodo0)
 	    @lista= Lista.new()
         
         @nodo1 = Nodo.new(@libro1, nil)
