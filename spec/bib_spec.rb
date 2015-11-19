@@ -89,11 +89,15 @@ describe Biblio do
             expect(@nodo6.prev).to eq(nil)
         end
         
-        it "Existe una lista enlazada doble con su head y su tail (doblemente enlazada)" do
-            @lista2.insert_nodo(@libro5)
-            expect(@lista2.head.value).to eq(@libro5)
-			expect(@lista2.tail.value).to eq(@libro5)
+        describe "Existe una lista enlazada doble con su head y su tail (doblemente enlazada)" do
+            it "Se puede insertar por el inicio y extraer por el final" do
+                @lista2.insert_head(@libro5) #insertamos libro por el principio
+                expect(@lista2.head.value).to eq(@libro5)
+    			expect(@lista2.tail.value).to eq(@libro5)
+    		end
         end  
+        
+        
     
     end
     
@@ -152,3 +156,4 @@ describe Biblio do
     
 
 end
+

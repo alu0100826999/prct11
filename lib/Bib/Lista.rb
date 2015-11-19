@@ -13,6 +13,7 @@ class Lista
             nodo.next = @inicio
             @inicio = nodo
         end
+        true
     end
     
     def extract()   #pop
@@ -23,5 +24,47 @@ class Lista
             return aux.value
         end
     end
+    
+end
+
+class Lista2
+    
+    attr_accessor :head, :tail
+    
+    def initialize()
+        @tail=nil
+        @head=nil
+    end
+    
+    def insert_head(nodo)
+        
+        nodo_ = Nodo2.new(nodo,nil,nil)
+        
+        if(@tail==nil || @head==nil)
+            @tail = nodo_
+            @head = nodo_
+        else
+            nodo_.next = @head
+            @head.prev = nodo_
+            @head = nodo_
+        end
+        true
+    
+    end
+    
+    def extract_tail()
+        
+        nodo = @tail.value
+        @tail = @tail.prev
+        
+        if(@tail == nil)
+            @head = nil
+        else
+            @tail.next = nil
+        end
+        return nodo
+        
+    end
+    
     
 end
