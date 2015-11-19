@@ -82,13 +82,15 @@ describe Libro do
         @lib1 = Libro.new("Richard E. Silverman", "Git Pocket Guide", "", "O’Reilly Media", "1 edition", "August 2, 2013", ["ISBN-10: 1449325866", "ISBN-13: 978-1449325862"])
     end
     
-    it "Comprobamos la instacia de Libro" do
-        (@lib1.instance_of?Libro).should eq(true)
+    it "Comprobamos instancias" do
+        @lib1.is_a?Libro
+	    @lib1.is_a?Biblio
+    	@lib1.instance_of?Libro
+    	@lib1.is_a?BasicObject
+    	@lib1.respond_to?(:autores)
     end
     
-    it "Comprobamos que la jeranquia de objetos de Libro pertenece a Biblio" do
-        expect(@lib1.is_a?Biblio).to eq(true)
-    end
+    
     
 end
 
