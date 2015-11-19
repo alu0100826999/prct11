@@ -17,3 +17,13 @@ class Biblio
     end
     
 end
+
+class Libro < Biblio
+    
+    attr_reader :autores, :titulo, :serie, :editorial, :numedicion, :fecha, :isbn
+        
+    def initialize(autores, titulo, serie = nil, editorial, numedicion, fecha, isbn)
+        super(autores, titulo, serie, editorial, numedicion, fecha, isbn)
+    end
+    
+end
