@@ -85,8 +85,8 @@ describe Biblio do
         
         describe "Existe un nodo de la lista que es doble" do
             it "Almacenamos los nodos" do
-                expect(@nodo2.next).to eq(nil)
-                expect(@nodo2.prev).to eq(nil)
+                expect(@nodo6.next).to eq(nil)
+                expect(@nodo6.prev).to eq(nil)
             end
         end
     
