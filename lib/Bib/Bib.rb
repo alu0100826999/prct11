@@ -27,3 +27,33 @@ class Libro < Biblio
     end
     
 end
+
+class Revista < Biblio
+    
+    attr_reader :autores, :titulo, :serie, :editorial, :numedicion, :fecha, :isbn
+        
+    def initialize(autores, titulo, serie = nil, editorial, numedicion, fecha, isbn)
+        super(autores, titulo, serie, editorial, numedicion, fecha, isbn)
+    end
+    
+end
+
+class Periodico < Biblio
+    
+    attr_reader :autores, :titulo, :serie, :editorial, :numedicion, :fecha, :isbn
+        
+    def initialize(autores, titulo, serie = nil, editorial, numedicion, fecha, isbn)
+        super(autores, titulo, serie, editorial, numedicion, fecha, isbn)
+    end
+    
+end
+
+class Electronico < Biblio
+    
+    attr_reader :autores, :titulo, :serie, :editorial, :numedicion, :fecha, :isbn
+        
+    def initialize(autores, titulo, serie = nil, editorial, numedicion, fecha, isbn)
+        super(autores, titulo, serie, editorial, numedicion, fecha, isbn)
+    end
+    
+end

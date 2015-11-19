@@ -18,6 +18,12 @@ describe Biblio do
         @nodo4 = Nodo.new(@libro4, nil)
         @nodo5 = Nodo.new(@libro5, nil)
         
+        @lib1 = Libro.new("Richard E. Silverman", "Git Pocket Guide", "", "O’Reilly Media", "1 edition", "August 2, 2013", ["ISBN-10: 1449325866", "ISBN-13: 978-1449325862"])
+        @rev1 = Revista.new("Josefa", "Vogue", "", "O’Reilly Media", "1 edition", "February 4, 2008", "ISBN-10: 1449325866")
+        @per1 = Periodico.new("Scott Chacon", "Pro Git 2009th Edition" "Pro", "Apress", "2009 edition", "August 27, 2009", ["ISBN-13: 978-1430218333", "ISBN-10: 1430218339"])
+        @elec1 = Electronico.new("Yukihiro Matsumoto", "The Ruby Programming Language", "", "O’Reilly Media", "1 edition", "February 4, 2008", "ISBN-13: 978-0596516178")
+
+        
     end
     
     context "Node" do
@@ -73,73 +79,65 @@ describe Biblio do
         
     end
     
+    
+    context "Lista2" do
+        
+       
+    
+    end
+    
+
+    context "Herencia" do
+        
+        describe Libro do
+        
+            it "Comprobamos instancias" do
+                @lib1.is_a?Libro
+        	    @lib1.is_a?Biblio
+            	@lib1.instance_of?Libro
+            	@lib1.is_a?BasicObject
+            	@lib1.respond_to?(:autores)
+            end
+            
+        end
+        
+        describe Revista do
+           
+            it "Comprobamos instancias" do
+                @lib1.is_a?Revista
+        	    @lib1.is_a?Biblio
+            	@lib1.instance_of?Revista
+            	@lib1.is_a?BasicObject
+            	@lib1.respond_to?(:autores)
+            end
+            
+        end
+        
+        describe Periodico do
+           
+            it "Comprobamos instancias" do
+                @lib1.is_a?Periodico
+        	    @lib1.is_a?Biblio
+            	@lib1.instance_of?Periodico
+            	@lib1.is_a?BasicObject
+            	@lib1.respond_to?(:autores)
+            end
+            
+        end
+        
+        describe Electronico do
+         
+            it "Comprobamos instancias" do
+                @lib1.is_a?Electronico
+        	    @lib1.is_a?Biblio
+            	@lib1.instance_of?Electronico
+            	@lib1.is_a?BasicObject
+            	@lib1.respond_to?(:autores)
+            end
+            
+        end
+    
+    end
+    
+
 end
-
-    
-describe Libro do
-   
-    before :each do
-        @lib1 = Libro.new("Richard E. Silverman", "Git Pocket Guide", "", "O’Reilly Media", "1 edition", "August 2, 2013", ["ISBN-10: 1449325866", "ISBN-13: 978-1449325862"])
-    end
-    
-    it "Comprobamos instancias" do
-        @lib1.is_a?Libro
-	    @lib1.is_a?Biblio
-    	@lib1.instance_of?Libro
-    	@lib1.is_a?BasicObject
-    	@lib1.respond_to?(:autores)
-    end
-    
-end
-
-describe Revista do
-   
-    before :each do
-        @rev1 = Revista.new("Josefa", "Vogue", "", "O’Reilly Media", "1 edition", "February 4, 2008", "ISBN-10: 1449325866")
-    end
-    
-    it "Comprobamos instancias" do
-        @lib1.is_a?Revista
-	    @lib1.is_a?Biblio
-    	@lib1.instance_of?Revista
-    	@lib1.is_a?BasicObject
-    	@lib1.respond_to?(:autores)
-    end
-    
-end
-
-describe Periodico do
-   
-    before :each do
-        @per1 = Periodico.new("Scott Chacon", "Pro Git 2009th Edition" "Pro", "Apress", "2009 edition", "August 27, 2009", ["ISBN-13: 978-1430218333", "ISBN-10: 1430218339"])
-    end
-    
-    it "Comprobamos instancias" do
-        @lib1.is_a?Periodico
-	    @lib1.is_a?Biblio
-    	@lib1.instance_of?Periodico
-    	@lib1.is_a?BasicObject
-    	@lib1.respond_to?(:autores)
-    end
-    
-end
-
-describe Electronico do
-   
-    before :each do
-        @elec1 = Electronico.new("Yukihiro Matsumoto", "The Ruby Programming Language", "", "O’Reilly Media", "1 edition", "February 4, 2008", "ISBN-13: 978-0596516178")
-    end
-    
-    it "Comprobamos instancias" do
-        @lib1.is_a?Electronico
-	    @lib1.is_a?Biblio
-    	@lib1.instance_of?Electronico
-    	@lib1.is_a?BasicObject
-    	@lib1.respond_to?(:autores)
-    end
-    
-end
-
-
-    
-
