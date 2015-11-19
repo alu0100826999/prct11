@@ -24,7 +24,7 @@ describe Biblio do
         
         @nodo6 = Nodo2.new(@libro1, nil, nil)
 
-        @lista2 = Lista2.new()
+        @listadoble = Listadoble.new()
         
     end
     
@@ -82,7 +82,7 @@ describe Biblio do
     end
     
     
-    context "Lista2" do
+    context "Listadoble" do
         
         it "Existe un nodo de la lista que es doble" do
             expect(@nodo6.next).to eq(nil)
@@ -91,30 +91,30 @@ describe Biblio do
         
         describe "Existe una lista enlazada doble con su head y su tail (doblemente enlazada)" do
             it "Se puede insertar por el inicio y extraer por el final" do
-                @lista2.insert_head(@libro5) #insertamos libro por el principio
-                expect(@lista2.head.value).to eq(@libro5)
-    			expect(@lista2.tail.value).to eq(@libro5)
+                @listadoble.insert_head(@libro5) #insertamos libro por el principio
+                expect(@listadoble.head.value).to eq(@libro5)
+    			expect(@listadoble.tail.value).to eq(@libro5)
     		end
         end  
         
         describe"#Se insertan varios nodos en la lista"do
 		    it"Se insertan correctamente"do
-    			@lista2.insert_head(@libro1)
-    				expect(@lista2.head.value).to eq(@libro1)
-    				expect(@lista2.tail.value).to eq(@libro1)
-    			@lista2.insert_head(@libro2)
-    				expect(@lista2.head.value).to eq(@libro2)
-    				expect(@lista2.tail.value).to eq(@libro1)
-    			@lista2.insert_head(@libro3)
-    				expect(@lista2.head.value).to eq(@libro3)
-    				expect(@lista2.tail.value).to eq(@libro1)
+    			@listadoble.insert_head(@libro1)
+    				expect(@listadoble.head.value).to eq(@libro1)
+    				expect(@listadoble.tail.value).to eq(@libro1)
+    			@listadoble.insert_head(@libro2)
+    				expect(@listadoble.head.value).to eq(@libro2)
+    				expect(@listadoble.tail.value).to eq(@libro1)
+    			@listadoble.insert_head(@libro3)
+    				expect(@listadoble.head.value).to eq(@libro3)
+    				expect(@listadoble.tail.value).to eq(@libro1)
 		    end
 	    end
     
     end
     
 
-    context "Herencia" do
+    context "Referencias" do
         
         describe Libro do
         

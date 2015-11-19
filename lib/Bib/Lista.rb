@@ -27,7 +27,7 @@ class Lista
     
 end
 
-class Lista2
+class Listadoble
     
     attr_accessor :head, :tail
     
