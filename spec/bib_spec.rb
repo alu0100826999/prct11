@@ -83,6 +83,10 @@ describe Libro do
     end
     
     it "Comprobamos la instacia de Libro" do
+        (@lib1.instance_of?Libro).should eq(true)
+    end
+    
+    it "Comprobamos que la jeranquia de objetos de Libro pertenece a Biblio" do
         expect(@lib1.is_a?Biblio).to eq(true)
     end
     
