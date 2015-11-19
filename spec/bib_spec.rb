@@ -97,7 +97,19 @@ describe Biblio do
     		end
         end  
         
-        
+        describe"#Se insertan varios nodos en la lista"do
+		    it"Se insertan correctamente"do
+    			@lista2.insert_head(@libro1)
+    				expect(@lista2.head.value).to eq(@libro1)
+    				expect(@lista2.tail.value).to eq(@libro1)
+    			@lista2.insert_head(@libro2)
+    				expect(@lista2.head.value).to eq(@libro2)
+    				expect(@lista2.tail.value).to eq(@libro1)
+    			@lista2.insert_head(@libro3)
+    				expect(@lista2.head.value).to eq(@libro3)
+    				expect(@lista2.tail.value).to eq(@libro1)
+		    end
+	    end
     
     end
     
