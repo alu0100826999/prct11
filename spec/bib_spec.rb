@@ -118,12 +118,12 @@ describe Biblio do
         
         describe Libro do
         
-            it "Comprobamos instancias" do
-                @lib1.is_a?Libro
-        	    @lib1.is_a?Biblio
-            	@lib1.instance_of?Libro
-            	@lib1.is_a?BasicObject
-            	@lib1.respond_to?(:autores)
+            it "Comprobamos instancias" do@lib1.is_a?Libro
+                expect(@libro1.is_a? Biblio).to eq(true)
+                expect(@libro1.is_a? Libro).to eq(true)
+                expect(@libro1.is_a? BasicObject).to eq(true)
+                expect(@libro1.is_a? Object).to eq(true)
+                expect(@libro1.is_a? Libro).to eq(true)
             end
             
         end
@@ -131,11 +131,10 @@ describe Biblio do
         describe Revista do
            
             it "Comprobamos instancias" do
-                @lib1.is_a?Revista
-        	    @lib1.is_a?Biblio
-            	@lib1.instance_of?Revista
-            	@lib1.is_a?BasicObject
-            	@lib1.respond_to?(:autores)
+            	expect(@rev1.is_a? Revista).to eq(true)
+            	expect(@rev1.is_a? Biblio).to eq(true)
+            	expect(@rev1.is_a? BasicObject).to eq(true)
+            	expect(@rev1.is_a? Object).to eq(true)
             end
             
         end
@@ -143,11 +142,10 @@ describe Biblio do
         describe Periodico do
            
             it "Comprobamos instancias" do
-                @lib1.is_a?Periodico
-        	    @lib1.is_a?Biblio
-            	@lib1.instance_of?Periodico
-            	@lib1.is_a?BasicObject
-            	@lib1.respond_to?(:autores)
+            	expect(@per1.is_a? Periodico).to eq(true)
+            	expect(@per1.is_a? Biblio).to eq(true)
+            	expect(@per1.is_a? BasicObject).to eq(true)
+            	expect(@per1.is_a? Object).to eq(true)
             end
             
         end
@@ -155,11 +153,10 @@ describe Biblio do
         describe Electronico do
          
             it "Comprobamos instancias" do
-                @lib1.is_a?Electronico
-        	    @lib1.is_a?Biblio
-            	@lib1.instance_of?Electronico
-            	@lib1.is_a?BasicObject
-            	@lib1.respond_to?(:autores)
+            	expect(@elec1.is_a? Electronico).to eq(true)
+            	expect(@elec1.is_a? Biblio).to eq(true)
+            	expect(@elec1.is_a? BasicObject).to eq(true)
+            	expect(@elec1.is_a? Object).to eq(true)
             end
             
         end
