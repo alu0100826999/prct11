@@ -191,6 +191,10 @@ describe Biblio do
             expect(@listadoble.max).to eq(@libro3)
         end
         
+        it "comprobando count" do
+	        expect(@listadoble.count).to eq(5)
+	    end
+        
     end
     
 
