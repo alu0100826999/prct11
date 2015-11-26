@@ -174,6 +174,14 @@ describe Biblio do
         
     end
     
+    context "Enumerable"do
+        
+        it "Comprobamos el minimo de la lista doble" do
+            expect(@listadoble.max).to eq(@libro1)
+        end
+        
+    end
+    
 
 end
 
