@@ -194,6 +194,10 @@ describe Biblio do
         it "comprobando count" do
 	        expect(@listadoble.count).to eq(5)
 	    end
+	    
+	    it"comprobando sort" do
+	        expect(@listadoble.sort).to eq([@libro5, @libro2, @libro1, @libro4, @libro3])
+    	end
         
     end
     
