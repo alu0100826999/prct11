@@ -29,42 +29,52 @@ end
 
 class Listadoble
     
-    attr_accessor :head, :tail
+    include Enumerable
     
-    def initialize()
-        @tail=nil
-        @head=nil
-    end
-    
-    def insert_head(nodo)
+        attr_accessor :head, :tail
         
-        nodo_ = Nodo2.new(nodo,nil,nil)
-        
-        if(@tail==nil || @head==nil)
-            @tail = nodo_
-            @head = nodo_
-        else
-            nodo_.next = @head
-            @head.prev = nodo_
-            @head = nodo_
+        def initialize()
+            @tail=nil
+            @head=nil
         end
-        true
-    
-    end
-    
-    def extract_tail()
         
-        nodo = @tail.value
-        @tail = @tail.prev
+        def insert_head(nodo)
+            
+            nodo_ = Nodo2.new(nodo,nil,nil)
+            
+            if(@tail==nil || @head==nil)
+                @tail = nodo_
+                @head = nodo_
+            else
+                nodo_.next = @head
+                @head.prev = nodo_
+                @head = nodo_
+            end
+            true
         
-        if(@tail == nil)
-            @head = nil
-        else
-            @tail.next = nil
         end
-        return nodo
         
-    end
+        def extract_tail()
+            
+            nodo = @tail.value
+            @tail = @tail.prev
+            
+            if(@tail == nil)
+                @head = nil
+            else
+                @tail.next = nil
+            end
+            return nodo
+            
+        end
+        
+        def each
+           nodo = @head
+           while (nodo != nil) 
+                yield nodo.value
+                nodo = nodo.next
+           end
+       end
     
     
 end

@@ -177,7 +177,12 @@ describe Biblio do
     context "Enumerable"do
         
         it "Comprobamos el minimo de la lista doble" do
-            expect(@listadoble.max).to eq(@libro1)
+            @listadoble.insert_head(@libro1)
+        	@listadoble.insert_head(@libro2)
+        	@listadoble.insert_head(@libro3)
+        	@listadoble.insert_head(@libro4)
+        	@listadoble.insert_head(@libro5)
+            expect(@listadoble.min).to eq(@libro5)
         end
         
     end
