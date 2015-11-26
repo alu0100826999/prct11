@@ -163,6 +163,17 @@ describe Biblio do
     
     end
     
+    context "Comparable" do
+        
+        it "Comparamos las referencias segun la fecha de publicacion" do
+            expect(@libro1 > @libro2).to eq(true)
+            expect(@libro2 > @libro5).to eq(false)
+            expect(@libro3 < @libro4).to eq(true)
+            expect(@libro1 < @libro4).to eq(false)
+        end
+        
+    end
+    
 
 end
 
