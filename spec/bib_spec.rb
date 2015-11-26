@@ -26,6 +26,13 @@ describe Biblio do
 
         @listadoble = Listadoble.new()
         
+        @listadoble.insert_head(@libro1)
+        @listadoble.insert_head(@libro2)
+        @listadoble.insert_head(@libro3)
+        @listadoble.insert_head(@libro4)
+        @listadoble.insert_head(@libro5)
+       
+        
     end
     
     context "Node" do
@@ -93,7 +100,7 @@ describe Biblio do
             it "Se puede insertar por el inicio y extraer por el final" do
                 @listadoble.insert_head(@libro5)
                 expect(@listadoble.head.value).to eq(@libro5)
-    			expect(@listadoble.tail.value).to eq(@libro5)
+    			expect(@listadoble.tail.value).to eq(@libro1)
     		end
         end  
         
@@ -177,12 +184,11 @@ describe Biblio do
     context "Enumerable"do
         
         it "Comprobamos el minimo de la lista doble" do
-            @listadoble.insert_head(@libro1)
-        	@listadoble.insert_head(@libro2)
-        	@listadoble.insert_head(@libro3)
-        	@listadoble.insert_head(@libro4)
-        	@listadoble.insert_head(@libro5)
             expect(@listadoble.min).to eq(@libro5)
+        end
+        
+        it "Comprobamos el maximo de la lista doble" do
+            expect(@listadoble.max).to eq(@libro3)
         end
         
     end
