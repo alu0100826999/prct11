@@ -1,16 +1,22 @@
 class Biblio
     
-    attr_reader :autores, :titulo
-        
-    def initialize(autores, titulo)
-        @autores = autores
-        @titulo = titulo
-    end
+    include Comparable
     
-    def to_s()
-        "#{@autores[0]}, #{@autores[1]}, #{@autores[2]} \n #{@titulo}"
-
-    end
+        attr_reader :autores, :titulo
+            
+        def initialize(autores, titulo)
+            @autores = autores
+            @titulo = titulo
+        end
+        
+        def to_s()
+            "#{@autores[0]}, #{@autores[1]}, #{@autores[2]} \n #{@titulo}"
+    
+        end
+        
+        def <=> (other) 
+			@titulo<=> other.titulo
+		end
     
 end
 

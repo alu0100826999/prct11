@@ -165,11 +165,11 @@ describe Biblio do
     
     context "Comparable" do
         
-        it "Comparamos las referencias segun la fecha de publicacion" do
-            expect(@libro1 > @libro2).to eq(true)
-            expect(@libro2 > @libro5).to eq(false)
-            expect(@libro3 < @libro4).to eq(true)
-            expect(@libro1 < @libro4).to eq(false)
+        it "Comparamos las referencias segun el orden alfabetico de los titulos de los libros" do
+            expect(@libro1 > @libro2).to eq(true) #el mayor es el mas alto en la cadena alfabetica
+            expect(@libro5 < @libro2).to eq(true)
+            expect(@libro4 > @libro3).to eq(false)
+            expect(@libro1 > @libro3).to eq(false)
         end
         
     end
