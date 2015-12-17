@@ -65,6 +65,11 @@ class Libro < Biblio
        fecha << date
     end
     
+    def to_s()
+        output = titulo
+        output << ", #{autor.join(', ')}, #{editorial.join(', ')}, #{fecha.join(', ')}\n\n"
+    end
+    
 end
 
 class Revista < Biblio
@@ -105,6 +110,11 @@ class Revista < Biblio
        issn << b_issn
     end
     
+    def to_s()
+        output = titulo
+        output << ", #{autor.join(', ')}, #{editorial.join(', ')}, #{issn.join(', ')}\n\n"
+    end
+    
 end
 
 
@@ -140,6 +150,11 @@ class Periodico < Biblio
         autor << editor
     end
     
+    def to_s()
+        output = titulo
+        output << ", #{autor.join(', ')}, #{edicion.join(', ')}\n\n"
+    end
+    
 end
 
 
@@ -148,6 +163,7 @@ class Electronico < Biblio
     attr_reader :autor, :url
         
     def initialize(titulo, &block)
+        @titulo = titulo
         @autor = []
         @url = []
         
@@ -170,6 +186,12 @@ class Electronico < Biblio
         n_url = text
         n_url << "(#{options[:direccion]})" if options[:direccion]
         url << n_url
+    end
+    
+    def to_s()
+        output = titulo
+        output << ", #{autor.join(', ')}, #{url.join(', ')}\n\n"
+        output
     end
     
 end

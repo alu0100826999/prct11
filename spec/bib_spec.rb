@@ -15,6 +15,8 @@ describe Biblio do
             expect(libro1.kind_of?Libro).to eq(true)
         end
         
+        puts libro1
+        
     end
     
     context "Revista" do
@@ -28,6 +30,8 @@ describe Biblio do
             expect(revista1.kind_of?Revista).to eq(true)
         end
         
+        puts revista1
+        
     end
     
     context "Periodico" do
@@ -40,6 +44,8 @@ describe Biblio do
             expect(per1.kind_of?Periodico).to eq(true)
         end
         
+        puts per1
+        
     end
     
     context "Documento Electronico" do
@@ -51,6 +57,8 @@ describe Biblio do
         it "Creamos un DSL con el documento electronico" do
             expect(elec1.kind_of?Electronico).to eq(true)
         end
+        
+        puts elec1
         
     end
     
