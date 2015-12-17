@@ -69,12 +69,30 @@ class Listadoble
         end
         
         def each
-           nodo = @head
-           while (nodo != nil) 
+            nodo = @head
+            while (nodo != nil) 
                 yield nodo.value
                 nodo = nodo.next
-           end
-       end
-    
-    
+            end
+        end
+        
+        
+        def to_s()
+            
+            lista_ref = []
+            index= 0
+            
+            while(@inicio != nil)
+            
+                lista_ref1 = @inicio.value.to_s()
+                lista_ref[index]= lista_ref1
+                @inicio= @inicio.next
+                index += 1
+                
+            end
+            
+            lista_ref
+            
+        end
+       
 end
