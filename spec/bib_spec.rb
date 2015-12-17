@@ -42,6 +42,18 @@ describe Biblio do
         
     end
     
+    context "Documento Electronico" do
+        elec1 = Electronico.new("Documento electronico") do
+            author :name => "Antonio Caño"
+            n_url :direccion => "http..."
+        end
+        
+        it "Creamos un DSL con el documento electronico" do
+            expect(elec1.kind_of?Electronico).to eq(true)
+        end
+        
+    end
+    
 
 end
 

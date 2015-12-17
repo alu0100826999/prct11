@@ -145,11 +145,31 @@ end
 
 class Electronico < Biblio
     
-    attr_reader :url
+    attr_reader :autor, :url
         
-    def initialize(autores, titulo, url)
-        super(autores, titulo)
-        @url = url
+    def initialize(titulo, &block)
+        @autor = []
+        @url = []
+        
+        if block_given?
+            if block.arity == 1
+                yield self
+            else
+                instance_eval &block
+            end
+        end
+    end
+    
+    def author(text, options = {})
+        author = text
+        author << "(#{options[:name]})" if options[:name]
+        autor << author
+    end
+    
+    def n_url(text, options = {})
+        n_url = text
+        n_url << "(#{options[:direccion]})" if options[:direccion]
+        url << n_url
     end
     
 end
