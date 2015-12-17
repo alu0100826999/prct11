@@ -2,16 +2,19 @@ class Biblio
     
     include Comparable
     
-        attr_reader :autores, :titulo
+        attr_reader :autor, :titulo
             
-        def initialize(autores, titulo)
-            @autores = autores
-            @titulo = titulo
-        end
-        
-        def to_s()
-            "#{@autores[0]}, #{@autores[1]}, #{@autores[2]} \n #{@titulo}"
-    
+        def initialize(titulo, &bloque)
+            self.autor = []
+            self.titulo = titulo
+            
+            if block_given?
+                if block.arity == 1
+                    yield self
+                else
+                    instance_eval &bloque
+                end
+            end
         end
         
         def <=> (other) 
@@ -23,53 +26,44 @@ end
 
 class Libro < Biblio
     
-    attr_reader :serie, :editorial, :numedicion, :fecha, :isbn
+    attr_reader :autor, :serie, :editorial, :numedicion, :fecha, :isbn
     
-    def initialize(autores, titulo, serie = nil, editorial, numedicion, fecha, isbn)
-        super(autores, titulo)
-        @serie = serie
-        @editorial = editorial
-        @numedicion = numedicion
-        @fecha = fecha
-        @isbn = isbn
-    end
-    
-end
-
-class Revista < Biblio
-    
-    attr_reader :serie, :editorial, :issn
+    def initialize(titulo, &block)
+        @autor = []
+        @titulo = titulo
+        @serie = []
+        @editorial = []
+        @numedicion = []
+        @fecha = []
+        @isbn = []
         
-    def initialize(autores, titulo, serie = nil, editorial, issn)
-        super(autores, titulo)
-        @serie = serie
-        @issn = issn
-        @editorial = editorial
-    end
-    
-end
-
-
-class Periodico < Biblio
-    
-    attr_reader :editor, :periodista
+        if block_given?
+            if block.arity == 1
+                yield self
+            else
+                instance_eval &block
+            end
+        end
         
-    def initialize(autores, titulo, editor, periodista)
-        super(autores, titulo)
-        @editor = editor
-        @periodista = periodista
+    end
+    
+    def author(text, options = {})
+        author = text
+        author << "(#{options[:name]})" if options[:name]
+        autor << author
+    end
+    
+    def edition(text, options = {})
+        edition = text
+        edition << "(#{options[:numedition]})" if options[:numedition]
+        editorial << edition
+    end
+    
+    def date(text, options = {})
+       date = text
+       date << "(#{options[:dates]})" if options[:dates]
+       fecha << date
     end
     
 end
 
-
-class Electronico < Biblio
-    
-    attr_reader :url
-        
-    def initialize(autores, titulo, url)
-        super(autores, titulo)
-        @url = url
-    end
-    
-end
