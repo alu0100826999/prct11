@@ -7,7 +7,7 @@ describe Biblio do
 
         libro1 = Libro.new("El principe de la niebla") do
             author  :name => "Carlos Ruiz"
-            edition :numedition => "20"
+            edit :numedition => "20"
             date "15 nov 1993"
         end
         
@@ -20,12 +20,24 @@ describe Biblio do
     context "Revista" do
         revista1 = Revista.new("Revista Vogue") do
             author :name => "Anna Wintour"
-            edition :numedition => "1000"
+            edit :numedition => "1000"
             b_issn "123456789"
         end
         
         it "Creamos un DSL con la revista" do
             expect(revista1.kind_of?Revista).to eq(true)
+        end
+        
+    end
+    
+    context "Periodico" do
+        per1 = Periodico.new("El Pais") do
+            editor :name => "Antonio Caño"
+            edit "456"
+        end
+        
+        it "Creamos un DSL con el periodico" do
+            expect(per1.kind_of?Periodico).to eq(true)
         end
         
     end

@@ -53,10 +53,10 @@ class Libro < Biblio
         autor << author
     end
     
-    def edition(text, options = {})
-        edition = text
-        edition << "(#{options[:numedition]})" if options[:numedition]
-        editorial << edition
+    def edit(text, options = {})
+        edit = text
+        edit << "(#{options[:numedition]})" if options[:numedition]
+        editorial << edit
     end
     
     def date(text, options = {})
@@ -93,10 +93,10 @@ class Revista < Biblio
         autor << author
     end
     
-    def edition(text, options = {})
-        edition = text
-        edition << "(#{options[:numedition]})" if options[:numedition]
-        editorial << edition
+    def edit(text, options = {})
+        edit = text
+        edit << "(#{options[:numedition]})" if options[:numedition]
+        editorial << edit
     end
     
     def b_issn(text, options = {})
@@ -110,12 +110,34 @@ end
 
 class Periodico < Biblio
     
-    attr_reader :editor, :periodista
+    attr_reader :autor, :editor, :edicion
         
-    def initialize(autores, titulo, editor, periodista)
-        super(autores, titulo)
-        @editor = editor
-        @periodista = periodista
+    def initialize(titulo, &block)
+        @autor = []
+        @titulo = titulo
+        @editor = []
+        @edicion = []
+        
+        if block_given?
+            if block.arity == 1
+                yield self
+            else
+                instance_eval &block
+            end
+        end
+        
+    end
+    
+    def edit(text, options = {})
+        edit = text
+        edit << "(#{options[:numedition]})" if options[:numedition]
+        edicion << edit
+    end
+    
+    def editor(text, options = {})
+        editor = text
+        editor << "(#{options[:neditor]})" if options[:neditor]
+        autor << editor
     end
     
 end
